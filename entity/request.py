@@ -1,4 +1,6 @@
-from entity.exceptions import InvalidRequestError, InvalidRequestError, UnknownStoreError
+from entity.exceptions import InvalidRequestError, UnknownStoreError, NotEnoughSpaceError
+from entity.shop import Shop
+from entity.store import Store
 
 
 class Request:
@@ -14,4 +16,11 @@ class Request:
 
         if self.destination not in storages or self.departure not in storages:
             raise UnknownStoreError
+
+        # if self.amount > self.destination.get_free_space():
+        #     raise NotEnoughSpaceError
+
+
+
+
 

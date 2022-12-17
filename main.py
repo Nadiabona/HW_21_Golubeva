@@ -6,13 +6,16 @@ from entity.store import Store
 
 shop = Shop(
     items = {'печенька' : 3,
-             'ноутбук' : 15
+             'ноутбук' : 1,
+             'кот' : 1,
+             'собака' : 3,
+
              }
 )
-
 store = Store(
     items = {'печенька' : 10,
-             'ноутбук' : 20
+             'конфетка' : 20,
+
              }
 )
 storages = {
@@ -26,10 +29,11 @@ def main():
             print(f' Cвободное место: {storages[storage_name].get_free_space()}')
 
         user_input = input('Введите строку в формате "Доставить 3 печенька из склада в магазин".\n'
-                           'Введите "стоп" или "stop", чтобы продолжить:\n',
-                       )
+                           'Введите "стоп" или "stop", чтобы продолжить:\n',                       )
         if user_input in ("stop", "стоп"):
             break
+
+
         try:
             request = Request(request_str = user_input, storages = storages)
             courier = Courier(request=request, storages=storages)

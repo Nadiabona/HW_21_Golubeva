@@ -25,8 +25,8 @@ class BaseStorage(AbstractStorage):
         if name not in self._items:
             raise UnknownProductError
 
-        if self._items[name] < amount:
-            raise NotEnoughProductError
+        # if self._items[name] < amount:
+        #     raise NotEnoughProductError
 
         self._items[name] -= amount
         if self._items[name]==0:

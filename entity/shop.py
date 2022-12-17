@@ -11,7 +11,7 @@ class Shop(BaseStorage):
         if self.get_unique_items_count() >= 5:
             raise TooManyDifferentItemsError
 
-            super().add(name, amount)
+        super().add(name, amount)
 
 
 
